@@ -12,19 +12,33 @@
  */
 public class Main {
     public static void main(String[] args) {
+        /**
+         * Создать на базе абстрактного класса массив сотрудников и заполнить его.
+         */
         Forwarder forwarder = new Forwarder("Garry", "Potter", 20);
-        forwarder.printEmployees();
-        System.out.println();
         Forwarder forwarder1 = new Forwarder("Ronald", "Weasley", 19);
-        forwarder1.printEmployees();
-        System.out.println();
-        Dispatcher dispatcher = new Dispatcher("Hermione", "Granger", 20);
-        dispatcher.printEmployees();
-        System.out.println();
+        Dispatcher dispatcher = new Dispatcher("Hermione", "Granger", 18);
         Dispatcher dispatcher1 = new Dispatcher("Severus", "Snape", 38);
-        dispatcher1.printEmployees();
+
+        Salary[] fondSalary = {forwarder1, dispatcher, forwarder, dispatcher1};
+
+        for (Salary fond: fondSalary) {
+            System.out.println(fond.salary(fond.getClass().getSimpleName()));
+        }
+
+
+        /**
+         * Реализовать возможность вывода данных с использованием foreach
+         * Видимо не совсем понял задание...
+         */
+        for (ListEmployee hymn: ListEmployee.people) {
+            System.out.println(hymn);
+        }
+
+
 
 
 
     }
+
 }

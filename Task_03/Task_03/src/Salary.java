@@ -1,10 +1,12 @@
-import java.util.ArrayList;
-
-public abstract class Salary {
-
+/**
+ * Абстрактный метод расчета ЗП
+ */
+public abstract class Salary extends ListEmployee implements Comparable<Salary> {
     abstract double salary(String payment);
-
-    ArrayList<Employees> employees = new ArrayList<>();
-
+    @Override
+    public int compareTo(Salary o) {
+        if (this == o) return 0;
+        return this.compareTo(o);
+    }
 
 }

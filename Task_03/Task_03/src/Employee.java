@@ -1,10 +1,14 @@
-public class Employees extends Salary{
+/**
+ * Родительский класс
+ * В нем же реализация метода расчет ЗП
+ */
+public class Employee extends Salary {
     protected String name;
     protected String soname;
     protected int age;
 
     public String getName() {
-        return name;
+        return getName();
     }
 
     public String getSoname() {
@@ -20,13 +24,20 @@ public class Employees extends Salary{
     int fixedSalary = Dispatcher.getFixedSalary();
 
 
+//    @Override
+//    double salary(String payment) {
+//        if (payment.equals("hourly")) {
+//            return days * hours * bid;
+//        } else {
+//            return fixedSalary;
+//        }
+//    }
     @Override
-    double salary(String payment) {
-        if (payment.equals("hourly")) {
+    double salary(String department) {
+        if (department == "Forwarder") {
             return days * hours * bid;
         } else {
             return fixedSalary;
         }
     }
-
 }

@@ -1,4 +1,4 @@
-public interface PrintEmployees {
+public interface PrintEmployee {
     String getName();
     String getSoname();
     int getAge();
