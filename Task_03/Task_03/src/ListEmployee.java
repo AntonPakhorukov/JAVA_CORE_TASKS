@@ -3,7 +3,16 @@
  */
 
 import java.util.ArrayList;
-class ListEmployee {
+public class ListEmployee implements Comparable<Salary>{
     protected static ArrayList<ListEmployee> people = new ArrayList<>();
 
+    public static ArrayList<ListEmployee> getPeople() {
+        return people;
+    }
+
+    @Override
+    public int compareTo(Salary o) {
+        if (this == o) return 0;
+        return this.compareTo(o);
+    }
 }
