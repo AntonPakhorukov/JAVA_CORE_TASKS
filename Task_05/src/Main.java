@@ -17,10 +17,6 @@ public class Main {
 
     public static void createBackup(File directoryToBackup) throws IOException {
         Path createBackup = Files.createDirectories(Paths.get("./backup")); // Создаем папку
-//        Path test = Files.createFile(Paths.get("./file.txt"));
-//        Path copy = Files.copy(test, Paths.get("./backup/file.txt"), REPLACE_EXISTING);
-//        Path pathBackup = Paths.get("./backup");
-//        System.out.println(pathBackup.toAbsolutePath());
         System.out.println("Папка backup создана: " + Files.exists(Paths.get("./backup"))); // проверяем
         File[] files = directoryToBackup.listFiles();
         for (File f : files) {
@@ -30,7 +26,9 @@ public class Main {
                 Path newFile = Paths.get(f.getPath());
                 Path copy2 = Files.copy(newFile, Paths.get("./backup/" + f.getName()), REPLACE_EXISTING);
             }
-            System.out.println("Файл \"" + f.getName() + "\" скопирован в " +"\""+ createBackup.getFileName() +"\": " + Files.exists(Paths.get("./backup/" + f.getName())));
+            // Проверяем, что все файлы с копировались
+            System.out.println("Файл \"" + f.getName() + "\" скопирован в " +"\""+
+                    createBackup.getFileName() +"\": " + Files.exists(Paths.get("./backup/" + f.getName())));
         }
     }
     public static void main(String[] args) throws IOException {
